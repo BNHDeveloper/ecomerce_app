@@ -53,23 +53,15 @@ class Home extends StatelessWidget {
             ListTile(
             leading: Icon(Icons.message,color: red,size: 22,),
             title: Text('chat',style: TextStyle(fontWeight: FontWeight.bold),),onTap: null,),
+            ListTile(
+            leading: Icon(Icons.logout,color: red,size: 22,),
+            title: Text('logout',style: TextStyle(fontWeight: FontWeight.bold),),onTap: null,),
           ],
         ),
       ),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: Builder(
-          builder: (context) => IconButton(
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-            icon: Container(
-              padding: const EdgeInsets.all(8),
-              child: const Icon(Icons.menu, color: Colors.black, size: 24),
-            ),
-          ),
-        ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
