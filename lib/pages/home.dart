@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project/Constatnt/constant.dart';
+import 'package:project/widget/NavBarSection.dart';
+import 'package:project/widget/NavHaeder.dart';
+import 'package:project/widget/inputFailed.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -10,108 +13,43 @@ class Home extends StatelessWidget {
       backgroundColor: const Color(0xFFFFFFFF),
       drawer: Drawer(
         backgroundColor: const Color(0xFFF6F6F6),
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: const <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundColor: Colors.black12,
-                    backgroundImage: AssetImage('assets/img/avatar2.png'),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Nour Elhouda',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    'easycodedz@example.com',
-                    style: TextStyle(color: Colors.black54),
-                  ),
-                ],
-              ),
-            ),
-            ListTile(
-            leading: Icon(Icons.home,color: red,size: 22,),
-             title: Text('Home',style: TextStyle(fontWeight: FontWeight.bold),),onTap: null,),
-            ListTile(
-            leading: Icon(Icons.shopping_cart_rounded,color: red,size:22,),
-            title: Text('Cart',style: TextStyle(fontWeight: FontWeight.bold),),onTap: null,),
-            ListTile(
-            leading: Icon(Icons.person,color: red,size: 22,),
-            title: Text('Profile',style: TextStyle(fontWeight: FontWeight.bold),),onTap: null,),
-            ListTile(
-            leading: Icon(Icons.message,color: red,size: 22,),
-            title: Text('chat',style: TextStyle(fontWeight: FontWeight.bold),),onTap: null,),
-            ListTile(
-            leading: Icon(Icons.logout,color: red,size: 22,),
-            title: Text('logout',style: TextStyle(fontWeight: FontWeight.bold),),onTap: null,),
-          ],
-        ),
+        child:NavBarSection()
       ),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(Icons.location_on, color: red, size: 20),
-            const SizedBox(width: 8),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Delivery Address',
-                  style: TextStyle(fontSize: 12, color: Colors.grey[600]),
-                ),
-                Text(
-                  'Algeria , skikda 21',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-        actions: [
-          Container(
-            margin: const EdgeInsets.only(right: 16),
-            child: CircleAvatar(
-              radius: 20,
-              backgroundColor: Colors.grey.shade200,
-              backgroundImage: const AssetImage('assets/img/avatar2.png'),
-              child: Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(color: Colors.red, width: 2),
-                ),
-              ),
-            ),
-          ),
-        ],
+        title: 
+        NavHaeder()
       ),
       body: Center(
-        child: Text(
-          'Home Page',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
-        ),
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.all(15),
+              padding: EdgeInsets.all(10),
+              alignment: Alignment.center,
+              width: 350,
+              height: 50,
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(15, 251, 0, 0),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: TextField(
+                keyboardType: TextInputType.text,
+                obscureText: false,
+                decoration:InputDecoration(
+                  border: InputBorder.none,
+                  prefixIcon: Icon(Icons.search),
+                  hintText: "Search",
+                  hintStyle: TextStyle(
+                    color: grey,
+                    fontWeight: FontWeight.w600,
+                  ),
+                )
+              ),
+            )
+          ],
+        )
       ),
     );
   }
