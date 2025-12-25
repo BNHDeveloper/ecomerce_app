@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project/class/menuItem.dart';
+import 'package:project/pages/foodDetails.dart';
 import 'package:project/pages/home.dart';
 void main() {
   runApp(const MyApp());
@@ -12,7 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(useMaterial3: true),
-      home: Home(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Home(),
+        
+     },
     );
   }
 }

@@ -1,34 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:project/Constatnt/constant.dart';
+import 'package:project/pages/foodDetails.dart';
 import 'package:project/widget/CardOffer.dart';
 import 'package:project/widget/CartFood.dart';
 import 'package:project/widget/CategoryTabs.dart';
 import 'package:project/widget/NavBarSection.dart';
 import 'package:project/widget/NavHaeder.dart';
 
-final List<Map<String, String>> menu = [
-  {
-    "description": "Lorem iposom dollars",
-    "price": "20",
-    "rating": "4",
-    "title": "Burger",
-    "image": "assets/img/humberger1.png",
-  },
-  {
-    "description": "Lorem iposom dollars",
-    "price": "10",
-    "rating": "3",
-    "title": "Tacos",
-    "image": "assets/img/tacos1.png",
-  },
-  {
-    "description": "Lorem iposom dollars",
-    "price": "15",
-    "rating": "5",
-    "title": "Pizza",
-    "image": "assets/img/pizza.png",
-  },
-];
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -91,12 +69,21 @@ class Home extends StatelessWidget {
                 itemCount: menu.length,
                 itemBuilder: (BuildContext context, int index) {
                   final listMeu = menu[index];
-                  return CartFood(
-                    description: listMeu["description"]!,
-                    price: listMeu["price"]!,
-                    rating: double.parse(listMeu["rating"]!),
-                    title: listMeu["title"]!,
-                    image: listMeu["image"]!,
+                  return GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => FoodDetails(item: listMeu),
+                        ),
+                      );                },
+                    child: CartFood(
+                      description: listMeu.description,
+                      price: listMeu.price,
+                      rating: listMeu.rating,
+                      title: listMeu.title,
+                      image: listMeu.image,
+                    ),
                   );
                 },
               ),

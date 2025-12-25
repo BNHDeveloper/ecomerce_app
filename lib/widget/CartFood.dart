@@ -109,7 +109,7 @@ class CartFood extends StatelessWidget {
                   Text(
                     description,
                     style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
-                    maxLines: 2,
+                    maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
                   SizedBox(height: 8),
