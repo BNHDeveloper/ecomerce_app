@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:project/class/menuItem.dart';
-import 'package:project/pages/foodDetails.dart';
+import 'package:project/Provider/cart.dart';
 import 'package:project/pages/home.dart';
+import 'package:provider/provider.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -11,29 +14,16 @@ class MyApp extends StatelessWidget {
  
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(useMaterial3: true),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => Home(),
-        
-     },
-    );
-  }
-}
-
-class  Welcom extends StatelessWidget {
-  const Welcom({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Welcome'),
-      ),
-      body: Center(
-        child: const Text('Welcome to the Flutter App!'),
+    return ChangeNotifierProvider(
+      create: (context) {return CartData();},
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData.light(useMaterial3: true),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => Home(),
+          
+       },
       ),
     );
   }
