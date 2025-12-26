@@ -3,16 +3,17 @@ import 'package:flutter/material.dart';
 class SummaryRow extends StatelessWidget {
   final String title;
   final String value;
-  Color? valueColor;
-  TextStyle? titleStyle;
-  TextStyle? valueStyle;
-  SummaryRow({
+final Color? valueColor;
+  final TextStyle? titleStyle;
+  final TextStyle? valueStyle;
+
+  const SummaryRow({
     super.key,
-    required this.value,
     required this.title,
-    valueColor,
-    titleStyle,
-    valueStyle,
+    required this.value,
+    this.valueColor,
+    this.titleStyle,
+    this.valueStyle,
   });
 
   @override

@@ -6,19 +6,54 @@ class CartData with ChangeNotifier {
   String email = "easycodedz@example.com";
 
   List<ItemSelected> selectedorder = [
-  ItemSelected(
-    price: "20",
-    title: "Burger",
-    image: "assets/img/humberger1.png",
-    number: 1,
-  ),
-  ItemSelected(
-    price: "10",
-    title: "pizza",
-    image: "assets/img/pizza.png",
-    number: 1,
-  ),
-];
+    ItemSelected(
+      id:1,
+      price: "20",
+      title: "Burger",
+      image: "assets/img/humberger1.png",
+      number: 1,
+    ),
+    ItemSelected(
+      id:2,
+      price: "10",
+      title: "pizza",
+      image: "assets/img/pizza.png",
+      number: 1,
+    ),
+  ];
 
-// use "notifyListeners();" at the end of every method
+  void addToCart(ItemSelected item) {
+    final existingIndex = selectedorder.indexWhere((cartItem) => cartItem.id == item.id);
+    
+    if (existingIndex >= 0) {
+      incrementQuantity(item.id);
+    } else {
+      selectedorder.add(item);
+      notifyListeners();
+    }
+  }
+  void removeFromCart(int itemId) {
+    selectedorder.removeWhere((item) => item.id == itemId);
+    notifyListeners();
+  }
+  void incrementQuantity(int itemId) {
+    final index = selectedorder.indexWhere((item) => item.id == itemId);
+    if (index >= 0) {
+      selectedorder[index].number += 1;
+      notifyListeners();
+    }
+  }
+  void decrementQuantity(int itemId) {
+    final index = selectedorder.indexWhere((item) => item.id == itemId);
+    if (index >= 0 && selectedorder[index].number > 1) {
+      selectedorder[index].number -= 1;
+      notifyListeners();
+    }else if (index >= 0 && selectedorder[index].number == 1) {
+      removeFromCart(itemId);
+    }
+  }
+  void clearCart() {
+    selectedorder.clear();
+    notifyListeners();
+  }
 }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:project/Constatnt/constant.dart';
+import 'package:project/Provider/cart.dart';
+import 'package:project/class/itemSelected.dart';
 import 'package:project/class/menuItem.dart';
+import 'package:provider/provider.dart';
 
 class FoodDetails extends StatelessWidget {
   final MenuItem item;
-  
-  const FoodDetails({
-    super.key,
-    required this.item,
-  });
+
+  const FoodDetails({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +96,7 @@ class FoodDetails extends StatelessWidget {
                     const SizedBox(height: 10),
 
                     Text(
-                      item.title, // Use dynamic title from item
+                      item.title,
                       style: const TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
@@ -190,7 +190,57 @@ class FoodDetails extends StatelessWidget {
                       width: double.infinity,
                       height: 56,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          final cartData = Provider.of<CartData>(
+                            context,
+                            listen: false,
+                          );
+
+                          // Add item to cart
+                          cartData.addToCart(
+                            ItemSelected(
+                              id: DateTime.now().millisecondsSinceEpoch,
+                              price: item.price,
+                              title: item.title,
+                              image: item.image,
+                              number: 1,
+                            ),
+                          );
+
+                          // Show success message
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Row(
+                                children: [
+                                  Icon(
+                                    Icons.check_circle,
+                                    color: Colors.green.shade300,
+                                  ),
+                                  const SizedBox(width: 12),
+                                  Expanded(
+                                    child: Text(
+                                      '${item.title} added to cart',
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              duration: const Duration(seconds: 2),
+                              backgroundColor: Colors.grey.shade900,
+                              behavior: SnackBarBehavior.floating,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              margin: const EdgeInsets.all(16),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 16,
+                                vertical: 12,
+                              ),
+                            ),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: red,
                           shape: RoundedRectangleBorder(

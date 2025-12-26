@@ -20,7 +20,7 @@ class OrderDetails extends StatelessWidget {
           icon: Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: Colors.grey.shade200,
+              color: const Color.fromARGB(232, 255, 228, 228),
               borderRadius: BorderRadius.circular(10),
             ),
             child: const Icon(
@@ -74,14 +74,14 @@ class OrderDetails extends StatelessWidget {
             // Order Summary
             Column(
               children: [
-                SummaryRow(title: 'Sub-Total', value: '\$50'),
+                SummaryRow(title: 'Sub -Total', value: '\$50'),
                 const SizedBox(height: 12),
                 SummaryRow(title: 'Delivery Charge', value: '\$5'),
                 const SizedBox(height: 12),
                 SummaryRow(
                   title: 'Discount',
                   value: '-\$5',
-                  valueColor: const Color.fromARGB(255, 3, 192, 10),
+                  valueColor: Color.fromARGB(255, 3, 192, 10),
                 ),
                 const SizedBox(height: 16),
                 Container(height: 1, color: Colors.grey.shade300),

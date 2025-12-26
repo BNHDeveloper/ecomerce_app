@@ -1,10 +1,12 @@
 class ItemSelected {
+  final int id; 
   final String price;
   final String title;
   final String image;
-  final double number;
+  int number; 
 
   ItemSelected({
+    required this.id,
     required this.price,
     required this.title,
     required this.image,
