@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'package:project/Constatnt/constant.dart';
 import 'package:project/Provider/cart.dart';
 import 'package:project/pages/OrderDetils.dart';
+import 'package:project/pages/login.dart';
 import 'package:provider/provider.dart';
 
 class NavBarSection extends StatelessWidget {
@@ -102,10 +103,17 @@ class NavBarSection extends StatelessWidget {
             title: Text('Chat', style: TextStyle(fontWeight: FontWeight.bold)),
             onTap: null,
           ),
-          const ListTile(
-            leading: Icon(Icons.logout, color: red, size: 22),
-            title: Text('Logout', style: TextStyle(fontWeight: FontWeight.bold)),
-            onTap: null,
+          ListTile(
+            leading: const Icon(Icons.logout, color: red, size: 22),
+            title: const Text('Logout', style: TextStyle(fontWeight: FontWeight.bold)),
+            onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Login(),
+                ),
+              );
+            },
           ),
         ],
       ),

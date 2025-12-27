@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/pages/home.dart';
 import 'package:project/widget/HeaderAuth.dart';
 import 'package:project/widget/inputFailed.dart';
 import 'package:project/Constatnt/constant.dart';
@@ -74,7 +75,14 @@ class Singup extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Home(),
+                            ),
+                          );
+                        },
                         child: const Text(
                           "Login",
                           style: TextStyle(

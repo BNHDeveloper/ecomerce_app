@@ -26,11 +26,16 @@ class HeaderAuth extends StatelessWidget {
               bottomRight: Radius.circular(30),
             ),
             image: const DecorationImage(
-              image: AssetImage("assets/img/Picture3.png"),
+              image: AssetImage("assets/img/Picture5.png"),
               fit: BoxFit.cover,
               alignment: Alignment(0, -.9),
             ),
           ),
+          child: Image(
+            image: AssetImage("assets/img/login.png"),
+            height: 150,
+            width: 150,
+            ),
         ),
 
         const SizedBox(height: 30),
