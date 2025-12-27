@@ -53,14 +53,14 @@ I commit code daily to track my progress and learning journey. Each day brings n
 ## 🤝 About Me
 I'm learning Flutter development and using this project to practice my skills. This README will be updated regularly as the project evolves.
 
-![Food E-Commerce App Screenshot](screenshots/image_1.png)
-![Food E-Commerce App Screenshot](screenshots/image_2.png)
-![Food E-Commerce App Screenshot](screenshots/image_3.png)
-![Food E-Commerce App Screenshot](screenshots/image_4.png)
-![Food E-Commerce App Screenshot](screenshots/image_5.png)
-![Food E-Commerce App Screenshot](screenshots/image_6.png)
-![Food E-Commerce App Screenshot](screenshots/image_7.png)
-![Food E-Commerce App Screenshot](screenshots/image_8.png)
+![Food E-Commerce App Screenshot](screenshots/image_1.png?raw=true&width=400)
+![Food E-Commerce App Screenshot](screenshots/image_2.png?raw=true&width=400)
+![Food E-Commerce App Screenshot](screenshots/image_3.png?raw=true&width=400)
+![Food E-Commerce App Screenshot](screenshots/image_4.png?raw=true&width=400)
+![Food E-Commerce App Screenshot](screenshots/image_5.png?raw=true&width=400)
+![Food E-Commerce App Screenshot](screenshots/image_6.png?raw=true&width=400)
+![Food E-Commerce App Screenshot](screenshots/image_7.png?raw=true&width=400)
+![Food E-Commerce App Screenshot](screenshots/image_8.png?raw=true&width=400)
 
 ---
 
