@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'package:project/Constatnt/constant.dart';
 import 'package:project/Provider/cart.dart';
 import 'package:project/pages/OrderDetils.dart';
+import 'package:project/pages/home.dart';
 import 'package:project/pages/login.dart';
 import 'package:provider/provider.dart';
 
@@ -50,10 +51,17 @@ class NavBarSection extends StatelessWidget {
               ],
             ),
           ),
-          const ListTile(
+          ListTile(
             leading: Icon(Icons.home, color: red, size: 22),
             title: Text('Home', style: TextStyle(fontWeight: FontWeight.bold)),
-            onTap: null,
+            onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Home(),
+                ),
+              );
+            },
           ),
           ListTile(
             leading: const Icon(Icons.shopping_cart_rounded, color: red, size: 22),

@@ -20,16 +20,16 @@ class HeaderAuth extends StatelessWidget {
           height: 230,
           width: double.infinity,
           decoration: BoxDecoration(
-            // color: const Color(0xFFF3F3F3),
+            color: const Color(0xFFF3F3F3),
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(30),
               bottomRight: Radius.circular(30),
             ),
-            image: const DecorationImage(
-              image: AssetImage("assets/img/Picture5.png"),
-              fit: BoxFit.cover,
-              alignment: Alignment(0, -.9),
-            ),
+            // image: const DecorationImage(
+            //   image: AssetImage("assets/img/Picture5.png"),
+            //   fit: BoxFit.cover,
+            //   alignment: Alignment(0, -.9),
+            // ),
           ),
           child: Image(
             image: AssetImage("assets/img/login.png"),
