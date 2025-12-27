@@ -4,6 +4,7 @@ import 'package:project/class/itemSelected.dart';
 class CartData with ChangeNotifier {
   String username = "Nour Elhouda";
   String email = "easycodedz@example.com";
+  String phone = "+213 796969986";
 
   List<ItemSelected> selectedorder = [
     ItemSelected(
