@@ -23,11 +23,7 @@ class OrderDetails extends StatelessWidget {
               color: const Color.fromARGB(232, 255, 228, 228),
               borderRadius: BorderRadius.circular(10),
             ),
-            child: const Icon(
-              Icons.arrow_back_ios_new,
-              color: red,
-              size: 20,
-            ),
+            child: const Icon(Icons.arrow_back_ios_new, color: red, size: 20),
           ),
         ),
         title: const Text(
@@ -45,20 +41,19 @@ class OrderDetails extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
             Expanded(
               child: ListView(
                 children: [
                   Consumer<CartData>(
                     builder: ((context, item, child) {
                       return ListView.builder(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: item.selectedorder.length,
-                      itemBuilder: (context, index) {
-                        return CardOrder(item: item.selectedorder[index]);
-                      },
-                    );
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: item.selectedorder.length,
+                        itemBuilder: (context, index) {
+                          return CardOrder(item: item.selectedorder[index]);
+                        },
+                      );
                     }),
                   ),
                 ],
@@ -74,7 +69,11 @@ class OrderDetails extends StatelessWidget {
             // Order Summary
             Column(
               children: [
-                SummaryRow(title: 'Sub -Total', value: '\$50'),
+                Consumer<CartData>(
+                  builder: ((context, item, child) {
+                    return SummaryRow(title: 'Sub -Total', value: item.total().toString());
+                  }),
+                ),
                 const SizedBox(height: 12),
                 SummaryRow(title: 'Delivery Charge', value: '\$5'),
                 const SizedBox(height: 12),
@@ -86,9 +85,9 @@ class OrderDetails extends StatelessWidget {
                 const SizedBox(height: 16),
                 Container(height: 1, color: Colors.grey.shade300),
                 const SizedBox(height: 16),
-                SummaryRow(
-                  title: 'Total',
-                  value: '\$50',
+                Consumer<CartData>(
+                  builder: ((context, item, child) {
+                    return SummaryRow(value: item.total().toString(),title: 'Total',
                   titleStyle: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -97,7 +96,8 @@ class OrderDetails extends StatelessWidget {
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.red,
-                  ),
+                  ),);
+                  }),
                 ),
               ],
             ),

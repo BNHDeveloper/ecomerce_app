@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:project/Constatnt/constant.dart';
 import 'package:project/Provider/cart.dart';
@@ -200,7 +202,7 @@ class FoodDetails extends StatelessWidget {
                           cartData.addToCart(
                             ItemSelected(
                               id: DateTime.now().millisecondsSinceEpoch,
-                              price: item.price,
+                              price:  double.parse(item.price),
                               title: item.title,
                               image: item.image,
                               number: 1,

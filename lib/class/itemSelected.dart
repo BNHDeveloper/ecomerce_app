@@ -1,6 +1,6 @@
 class ItemSelected {
   final int id; 
-  final String price;
+  final double price;
   final String title;
   final String image;
   int number; 
