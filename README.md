@@ -53,15 +53,27 @@ I commit code daily to track my progress and learning journey. Each day brings n
 ## 🤝 About Me
 I'm learning Flutter development and using this project to practice my skills. This README will be updated regularly as the project evolves.
 
-<img src="screenshots/image_1.png" style="height: 400px; width: auto;" alt="App Screenshot">
-<img src="screenshots/image_2.png" style="height: 400px; width: auto;" alt="App Screenshot">
-<img src="screenshots/image_3.png" style="height: 400px; width: auto;" alt="App Screenshot">
-<img src="screenshots/image_4.png" style="height: 400px; width: auto;" alt="App Screenshot">
-<img src="screenshots/image_5.png" style="height: 400px; width: auto;" alt="App Screenshot">
-<img src="screenshots/image_6.png" style="height: 400px; width: auto;" alt="App Screenshot">
-<img src="screenshots/image_7.png" style="height: 400px; width: auto;" alt="App Screenshot">
-<img src="screenshots/image_8.png" style="height: 400px; width: auto;" alt="App Screenshot">
+### All App Screenshots
 
+#### Row 1
+<table>
+  <tr>
+    <td><img src="screenshots/image_1.png" height="300" style="width: auto;"></td>
+    <td><img src="screenshots/image_2.png" height="300" style="width: auto;"></td>
+    <td><img src="screenshots/image_3.png" height="300" style="width: auto;"></td>
+    <td><img src="screenshots/image_4.png" height="300" style="width: auto;"></td>
+  </tr>
+</table>
+
+#### Row 2  
+<table>
+  <tr>
+    <td><img src="screenshots/image_5.png" height="300" style="width: auto;"></td>
+    <td><img src="screenshots/image_6.png" height="300" style="width: auto;"></td>
+    <td><img src="screenshots/image_7.png" height="300" style="width: auto;"></td>
+    <td><img src="screenshots/image_8.png" height="300" style="width: auto;"></td>
+  </tr>
+</table>
 ---
 
 **📌 Note**: This is a learning project. The app is under active development and will be updated daily with new features and improvements.
