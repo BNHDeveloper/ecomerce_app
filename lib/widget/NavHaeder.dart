@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/Constatnt/constant.dart';
+import 'package:project/pages/location.dart';
 import 'package:project/pages/profilePage.dart';
 
 class NavHaeder extends StatelessWidget {
@@ -12,30 +13,40 @@ class NavHaeder extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(width: 5),
-          const Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.location_on, color: red, size: 20),
-            SizedBox(width: 8),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Delivery Address',
-                  style: TextStyle(fontSize: 12, color: Color.fromRGBO(117, 117, 117, 1)),
+          GestureDetector(
+            onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LocationMap(),
                 ),
-                Text(
-                  'Algeria , skikda 21',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
+              );
+            },
+            child: const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.location_on, color: red, size: 20),
+              SizedBox(width: 8),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Delivery Address',
+                    style: TextStyle(fontSize: 12, color: Color.fromRGBO(117, 117, 117, 1)),
                   ),
-                ),
-              ],
-            ),
-          ],
-        ),
+                  Text(
+                    'Algeria , skikda 21',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+                    ),
+          ),
           GestureDetector(
             onTap: (){
               Navigator.push(
